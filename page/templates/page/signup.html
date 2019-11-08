@@ -1,0 +1,13 @@
+{% extends 'page/base.html'%}
+{% block content %}
+<h1>Register Here</h1>
+<h3>Just fill out the form.</h3>
+<!--To represent the signup  form-->
+<form method="post">
+    <!-- csrf_token is used for generate random token number -->
+    {% csrf_token%}
+    <!--form.as_p simply wraps all the elements in HTML <p> tags-->
+    {{ form.as_p }}
+    <input type="submit" name="" value="Register" title="click on Register">
+</form>
+{% endblock%}

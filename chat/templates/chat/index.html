@@ -1,0 +1,31 @@
+<!-- chat/templates/chat/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+</head>
+<style>
+    body {background-image:url('https://www.freeiconspng.com/img/44107');}
+</style>
+<body>
+    <h2>Hello user!!!</h2>
+    <h3>What chat room would you like to enter?</h3>
+    <input id="room-name-input" type="text" placeholder="enter the room name" size="50"/><br/>
+    <input id="room-name-submit" type="button" title="click on Enter" value="Enter"/>
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = '/chat/' + roomName + '/';
+        };
+    </script>
+</body>
+</html>

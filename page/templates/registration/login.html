@@ -1,0 +1,15 @@
+{% extends 'page/base.html'%}
+{% block content %}
+<center>
+<h2> Login </h2>
+
+<!--To represent the login form-->
+
+<form method="post">
+    <!-- csrf_token is used for generate random token number -->
+    {% csrf_token%}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+</form>
+</center>
+{% endblock%}
